@@ -1,0 +1,128 @@
+body {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  width: 320px;
+  background: #FFFFFF;
+  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 13px;
+}
+#addBtn, #deleteBtn {
+    padding: 7px 10px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    border-radius: 7px;
+    margin: 3px 20px;
+}
+#addBtn {
+    border: 2px solid #17C3B2;
+    color: #17C3B2;
+}
+#deleteBtn {
+    border: 2px solid #f88f81;
+    color: #f88f81;
+}
+   
+#addBtn::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #17C3B2;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+#deleteBtn::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #f88f81;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+   
+#addBtn:hover::before, #deleteBtn:hover:before {
+    width: 105%;
+}
+   
+#addBtn:hover, #deleteBtn:hover {
+    color: #111;
+    cursor: pointer;
+}
+   
+h1 {
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-size: xx-large;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    color: #2B2B2F;
+}
+
+.task_label {
+    text-transform: uppercase;
+    font-size: larger;
+    padding: 10px 0;
+    margin: 7px 0;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    color: #5F5D6B;
+
+}
+#newTodo {
+    padding: 0.5em 0.75em;
+    border-radius: 0.2em;
+    border: 1px solid var(--c-border, currentColor);
+    color: var(--c-text);
+    font-size: 1rem;
+    letter-spacing: 0.1ch;
+    margin: 10px 0;
+}
+#newTodo:is(:focus, :focus-visible) {
+    outline: 2px solid blue;
+    outline-offset: 2px;
+}
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
+li {
+    list-style-type: decimal;
+    margin: 5px;
+}
+
+#todoText {
+    text-overflow: ellipsis;
+    font-size: larger;
+    padding: 5px;
+}
